@@ -2,17 +2,6 @@ services:
   web:
     image: nginx:alpine
     container_name: kahoot-web
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.kahoot.rule=Host(`franvsnico.duckdns.org`)"
-      - "traefik.http.routers.kahoot.entrypoints=websecure"
-      - "traefik.http.routers.kahoot.tls.certresolver=letsencrypt"
-      - "traefik.http.services.kahoot.loadbalancer.server.port=80"
-    networks:
-      - traefik
-
-networks:
-  traefik:
-    external: true    volumes:
+    volumes:
       - ./fran-vs-nico.html:/usr/share/nginx/html/index.html:ro
     restart: unless-stopped
