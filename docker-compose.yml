@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: kahoot-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./fran-vs-nico.html:/usr/share/nginx/html/index.html:ro
+    restart: unless-stopped
