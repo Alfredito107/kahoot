@@ -4,7 +4,7 @@ services:
     container_name: kahoot-web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.kahoot.rule=Host(`kahoot.tu-dominio.com`)"
+      - "traefik.http.routers.kahoot.rule=Host(`franvsnico.duckdns.org`)"
       - "traefik.http.routers.kahoot.entrypoints=websecure"
       - "traefik.http.routers.kahoot.tls.certresolver=letsencrypt"
       - "traefik.http.services.kahoot.loadbalancer.server.port=80"
